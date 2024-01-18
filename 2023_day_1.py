@@ -1,3 +1,5 @@
+# Advent of Code - Day 1 - Part 1
+
 file = open('2023_day_1.txt', 'r')
 lines = file.readlines()
 
@@ -8,24 +10,23 @@ for l in lines:
     nums = "".join([e for e in l if e.isdigit()])
     cleaned.append(nums)
 
-print(len(cleaned))
+# DEBUG CODE: print(len(cleaned))
+
+# Grab the first and last number in each line
 
 fnl = []
 
-# strip out the first and last int
 for l in cleaned:
     if len(l) <= 1:
         linesum = l+l
-        fnl.append( int(linesum) )
+        fnl.append( int(linesum) ) # join the line and add
     else:
         linesum = l[0]+l[-1]
-        # print(linesum)
-        fnl.append( int(linesum) )
+        fnl.append( int(linesum) ) #join the line and add
 
-print(len(fnl))
+
+# DEBUG CODE: print(len(fnl)) # Verifies the correct amount of lines got read.
+
 print(sum(fnl))
 
-# sum each line
-# sum all lines
-# print the final sum
 file.close()
